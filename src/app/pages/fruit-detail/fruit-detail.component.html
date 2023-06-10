@@ -1,0 +1,55 @@
+<div class="modal-header">
+  <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+</div>
+<div class="modal-body" *ngIf="fruitData">
+  <div class="row">
+    <div class="col-6">
+      <img [src]="imagePath+fruitData.imageName" style=" border: 0.5px solid #ccc8c8;
+            border-radius: 10px;" />
+    </div>
+    <div class="col-6">
+      <h1>{{fruitData.name}}</h1>
+      <h4>{{fruitData.subName}}</h4>
+      <div class="row">
+        <div class="col-6">
+          <p>Key Information</p>
+        </div>
+        <div class="col-6">
+          <p>{{fruitData.keyinfo}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <p>About the Product</p>
+        </div>
+        <div class="col-6"> <span
+            [ngClass]="{'see-less': readMoreStatus === false, 'see-more' : readMoreStatus === true }">{{fruitData.description}}</span><span (click)="showMore()" class="show-color">{{showText}}</span> </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <p>Country Origin</p>
+        </div>
+        <div class="col-6">
+          <p>{{fruitData.country}}</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <div>
+            <button type="button" class="btn btn-primary" style="width: 50px;">QTY</button>
+            <select name="qty" class="input-box">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-6">
+          <button type="button" class="btn btn-primary" style="width: 100%;"  (click)="close()">ADD TO CART</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.modal-header{
+    border-bottom: 0px;
+}
+.input-box{
+    width: 55%;
+    border: 0.5px solid gray;
+    margin-left: 7px;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.see-more{
+    overflow: visible;
+    width: 170px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    height: 250px;
+}
+.see-less{
+    overflow: hidden;
+    width: 170px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.show-color{
+    color: #0E50F7;
+}

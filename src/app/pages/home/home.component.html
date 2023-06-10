@@ -1,0 +1,134 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+    <img alt="Angular Logo" src="assets/images/Resources/Screen1/FarmFreshLogo.png" />
+    <div class="spacer"></div>
+    <form style="width: 100vw">
+        <mat-form-field appearance="fill">
+            <input matInput [matAutocomplete]="auto" [formControl]="searchTerm" (keydown.enter)="searchFruit()" placeholder="Search fruit by name" />
+            <mat-autocomplete #auto="matAutocomplete" style="background-color: blue;">
+                <mat-option *ngFor="let fruit of filteredFruits " 
+                    [value]="fruit.name" (click)="selectInSearch(fruit)">
+                    <img [src]="imagePath+fruit.imageName" style="width: 50px;"/>
+                  <span style="margin-left: 25px;">{{ fruit.name }}</span>
+                </mat-option>
+              </mat-autocomplete>
+            <mat-icon matSuffix>search</mat-icon>
+            
+        </mat-form-field>
+        
+    </form>
+    <i class="flaticon2-shopping-cart-1" style="font-size: 30px;margin-right: 12px;"></i>
+</div>
+
+<!-- Body -->
+<div class="parallax">
+    <div class="bg_one">
+        <div style="margin-top: 60px;width: 100vw; "> </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col-6 " style="text-align : center">
+                <div class="vertical-center">
+                    <h1>FRESH FOOD FOR A FRESHER YOU</h1>
+                    <h4>Quality Food, Quality Life</h4>
+                </div>
+
+            </div>
+            <div class="col-6">
+                <img src="assets/images/Resources/Screen2/Side-image.png" style="height: 300px;margin-top: 30px;" />
+            </div>
+        </div>
+        <div class="row" style="margin: 20px 0px;">
+            <div class="col-4 img-div ">
+                <img src="assets/images/Resources/Screen2/clock.png" />
+                <h3>Online Everywhere</h3>
+            </div>
+            <div class="col-4 img-div">
+                <img src="assets/images/Resources/Screen2/delivery-truck.png" />
+                <h3>Fast Delivery</h3>
+            </div>
+            <div class="col-4 img-div">
+                <img src="assets/images/Resources/Screen2/support.png" />
+                <h3>24/7 Support</h3>
+            </div>
+        </div>
+
+        <div class="row row-margin-top">
+            <div class="col-3" style="background-color: rgb(236, 240, 241); padding: 0;">
+                
+                <aside>
+                    <ul>
+                      <li>
+                        <a href="#">On Sales!</a>
+                        <ul>
+                            <li><a href="#">Latest On Sales!</a></li>
+                            <li><a href="#">Past Offers On Sales!</a></li>
+                            <li><a href="#">Future Offers On Sales!</a> </li>
+                        </ul>
+                      </li>
+                      <li><a href="#">New</a>
+                        <ul>
+                            <li ><a href="#" >Latest New</a></li>
+                            <li ><a href="#" >Past Offers New</a></li>
+                            <li ><a href="#" >Future Offers New</a> </li>
+                          </ul>
+                        </li>
+                      <li><a href="#">Shop by Store</a>
+                        <ul>
+                            <li ><a href="#" >Latest </a></li>
+                            <li ><a href="#" >Past Offers</a></li>
+                            <li ><a href="#" >Future Offers</a> </li>
+                          </ul>
+                      </li>
+                      <li><a href="#">Fruit And Veg</a>
+                        <ul>
+                            <li ><a href="#" >Latest </a></li>
+                            <li ><a href="#" >Past Offers</a></li>
+                            <li ><a href="#" >Future Offers</a> </li>
+                          </ul>
+                      </li>
+                      <li><a href="#">Meat & Seafood</a>
+                        <ul>
+                            <li ><a href="#" >Latest </a></li>
+                        <li ><a href="#" >Past Offers</a></li>
+                        <li ><a href="#" >Future Offers</a> </li> 
+                          </ul>
+                      </li>
+                      <li><a href="#">Dairy and Chilled</a>
+                        <ul>
+                            <li ><a href="#" >Latest </a></li>
+                        <li ><a href="#" >Past Offers</a></li>
+                        <li ><a href="#" >Future Offers</a> </li>
+                          </ul>
+                      </li>
+                      <li><a href="#">Bakery</a>
+                        <ul>
+                            <li ><a href="#" >Latest </a></li>
+                        <li ><a href="#" >Past Offers</a></li>
+                        <li ><a href="#" >Future Offers</a> </li>
+                          </ul>
+                      </li>
+                      <li><a href="#">Beverages</a>
+                        <ul>
+                            <li ><a href="#" >Latest </a></li>
+                            <li ><a href="#" >Past Offers</a></li>
+                            <li ><a href="#" >Future Offers</a> </li>
+                          </ul>
+                      </li>
+                    </ul>
+                  </aside>
+            </div>
+            <div class="col-9 card-col">
+                <div class="row row-margin-top">
+                    <div class="col-4" *ngFor="let item of fruitList" style=" padding: 10px 20px;">
+                        <mat-card style="margin: 10px;border-radius: 10px;" (click)="openModal(item.id)">
+                            <img mat-card-image [src]="imagePath+item.imageName" style="min-height: 150px;">
+                            <mat-card-header class="bold">{{item.name}}</mat-card-header>
+                            <mat-card-content>{{item.subName}}</mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
